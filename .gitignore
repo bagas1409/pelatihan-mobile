@@ -1,0 +1,63 @@
+# Node.js / React Native / Expo
+node_modules/
+.expo/
+.expo-shared/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Expo build artifacts
+web-build/
+.expo/
+.expo-shared/
+
+# Metro Bundler cache
+*.tmp
+*.temp
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE/editor
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Build outputs
+dist/
+build/
+
+# Generated files
+*.expo.workspaces
+
+# Secure store / local environment
+.env
+.env.*
+
+# Android
+/android/
+**/android/**/build/
+**/android/**/captures/
+
+# iOS
+/ios/
+**/ios/**/Pods/
+**/ios/**/build/
+**/ios/**/DerivedData/
+
+belajar/
+
+# Do not ignore the workspace folders themselves
+# (folder belajar and others are kept tracked if added)
