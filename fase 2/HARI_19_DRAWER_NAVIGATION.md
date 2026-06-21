@@ -16,7 +16,7 @@ Jalankan perintah penginstalan berikut di terminal proyek Anda:
 npx expo install @react-navigation/drawer react-native-gesture-handler react-native-reanimated
 ```
 
-Pastikan Anda menambahkan baris import gesture handler di baris **paling atas** file `app/_layout.tsx` (atau entry point):
+Pastikan Anda menambahkan baris import gesture handler di baris **paling atas** file `src/src/app/_layout.tsx (atau app/_layout.tsx)` (atau `src/app/_layout.tsx (atau app/_layout.tsx)`):
 ```typescript
 import 'react-native-gesture-handler';
 ```
@@ -25,11 +25,11 @@ import 'react-native-gesture-handler';
 
 ## 2. Studi Kasus PMI: Membuat Laci Menu Dinas UDD
 
-Sama seperti Tabs, kita bisa menggunakan folder grouping khusus bernama **`app/(drawer)/`** untuk mengelompokkan halaman laci samping.
+Sama seperti Tabs, kita bisa menggunakan folder grouping khusus bernama **`src/app/(drawer)/`** (atau **`app/(drawer)/`**) untuk mengelompokkan halaman laci samping.
 
-### Berkas Layout: `app/(drawer)/_layout.tsx`
+### Berkas Layout: `src/src/app/(drawer)/_layout.tsx (atau app/(drawer)/_layout.tsx)` (atau `src/app/(drawer)/_layout.tsx (atau app/(drawer)/_layout.tsx)`)
 ```tsx
-// app/(drawer)/_layout.tsx
+// src/src/app/(drawer)/_layout.tsx (atau app/(drawer)/_layout.tsx) (atau src/app/(drawer)/_layout.tsx (atau app/(drawer)/_layout.tsx))
 import React from 'react';
 import { Drawer } from 'expo-router/drawer';
 import { Text } from 'react-native';

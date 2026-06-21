@@ -15,12 +15,12 @@ Modul `expo-notifications` menyediakan dua sensor pendengar reaktif:
 
 ---
 
-## 2. Studi Kasus PMI: Auto Navigasi Rute CITO (`app/_layout.tsx`)
+## 2. Studi Kasus PMI: Auto Navigasi Rute CITO (`src/app/_layout.tsx (atau app/_layout.tsx)`)
 
-Buka file layout utama global Anda di **`app/_layout.tsx`** dan pasang listener penjinak notifikasi berikut di dalam `useEffect`:
+Buka file layout utama global Anda di **`src/app/_layout.tsx (atau app/_layout.tsx)`** dan pasang listener penjinak notifikasi berikut di dalam `useEffect`:
 
 ```tsx
-// app/_layout.tsx
+// src/app/_layout.tsx (atau app/_layout.tsx)
 import React, { useEffect } from 'react';
 import { Stack, router } from 'expo-router';
 import * as Notifications from 'expo-notifications';

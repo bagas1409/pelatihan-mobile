@@ -9,10 +9,10 @@ Di fase ini, kita akan mempelajari cara membuat banyak halaman dan berpindah ant
 
 ## 1. Filosofi Folder `app/` di Expo Router
 
-Di Expo Router, setiap file yang diletakkan di dalam direktori **`app/`** otomatis didaftarkan sebagai rute halaman aktif.
-*   `app/index.tsx` $\rightarrow$ Halaman utama awal (diakses di rute `/`).
-*   `app/profil.tsx` $\rightarrow$ Halaman profil petugas (diakses di rute `/profil`).
-*   `app/stok/index.tsx` $\rightarrow$ Halaman stok darah (diakses di rute `/stok`).
+Di Expo Router, setiap file yang diletakkan di dalam direktori **`app/`** (atau **`src/app/`** jika proyek menggunakan struktur folder `src` seperti proyek `belajar` kita) otomatis didaftarkan sebagai rute halaman aktif.
+*   `src/src/app/index.tsx (atau app/index.tsx)` (atau `src/app/index.tsx (atau app/index.tsx)`) $\rightarrow$ Halaman utama awal (diakses di rute `/`).
+*   `src/src/app/profil.tsx (atau app/profil.tsx)` (atau `src/app/profil.tsx (atau app/profil.tsx)`) $\rightarrow$ Halaman profil petugas (diakses di rute `/profil`).
+*   `src/app/stok/index.tsx` (atau `app/stok/index.tsx`) $\rightarrow$ Halaman stok darah (diakses di rute `/stok`).
 
 ---
 
@@ -20,11 +20,11 @@ Di Expo Router, setiap file yang diletakkan di dalam direktori **`app/`** otomat
 
 Untuk membuat teks atau tombol yang bisa diklik untuk pindah halaman, Expo Router menyediakan komponen **`<Link>`** yang sangat mirip dengan `<NuxtLink>` di Nuxt 3.
 
-Mari kita buat halaman index awal di `app/index.tsx` yang memiliki link menuju halaman profil:
+Mari kita buat halaman index awal di `src/src/app/index.tsx (atau app/index.tsx)` (atau `src/app/index.tsx (atau app/index.tsx)`) yang memiliki link menuju halaman profil:
 
-### Berkas Halaman: `app/index.tsx`
+### Berkas Halaman: `src/src/app/index.tsx (atau app/index.tsx)` (atau `src/app/index.tsx (atau app/index.tsx)`)
 ```tsx
-// app/index.tsx
+// src/src/app/index.tsx (atau app/index.tsx) (atau src/app/index.tsx (atau app/index.tsx))
 import React from 'react';
 import { View, Text } from 'react-native';
 import { Link } from 'expo-router';
@@ -51,9 +51,9 @@ export default function HalamanUtama() {
 
 ---
 
-### Berkas Halaman Tujuan: `app/profil.tsx`
+### Berkas Halaman Tujuan: `src/src/app/profil.tsx (atau app/profil.tsx)` (atau `src/app/profil.tsx (atau app/profil.tsx)`)
 ```tsx
-// app/profil.tsx
+// src/src/app/profil.tsx (atau app/profil.tsx) (atau src/app/profil.tsx (atau app/profil.tsx))
 import React from 'react';
 import { View, Text } from 'react-native';
 import { Link } from 'expo-router';
@@ -64,7 +64,7 @@ export default function HalamanProfil() {
       <Text className="text-base font-bold text-slate-800">👤 Profil Petugas UDD</Text>
       <Text className="text-xs text-slate-500">Nama: Ahmad Syarif | ID: 19823</Text>
 
-      <!-- Link kembali ke halaman utama / index -->
+      {/* Link kembali ke halaman utama / index */}
       <Link href="/" className="bg-slate-100 px-6 py-2.5 rounded-xl">
         <Text className="text-slate-600 font-bold text-xs">Kembali</Text>
       </Link>
@@ -77,8 +77,8 @@ export default function HalamanProfil() {
 
 ## 3. Latihan Soal Mandiri
 1. Apa kelebihan sistem routing berbasis file (**File-based Routing**) di Expo Router dibandingkan sistem rute manual di React Navigation klasik?
-2. Buka kode `app/index.tsx`. Jelaskan kegunaan properti `href="/profil"` pada tag `<Link>` di atas.
-3. Apa yang terjadi jika kita membuat berkas file baru bernama `app/tentang.tsx` di dalam direktori proyek? Sebutkan nama rute URL penemu layar tersebut.
+2. Buka kode `src/src/app/index.tsx (atau app/index.tsx)` (atau `src/app/index.tsx (atau app/index.tsx)`). Jelaskan kegunaan properti `href="/profil"` pada tag `<Link>` di atas.
+3. Apa yang terjadi jika kita membuat berkas file baru bernama `src/app/tentang.tsx` (atau `app/tentang.tsx`) di dalam direktori proyek? Sebutkan nama rute URL penemu layar tersebut.
 
 ---
 
@@ -92,5 +92,5 @@ export default function HalamanProfil() {
 *   **Target Alamat Rute**: Properti `href` (hypertext reference) menentukan alamat layar tujuan yang ingin dibuka saat komponen diklik oleh jari pengguna.
 
 ### Jawaban 3: Peta Halaman Otomatis
-*   Menambah file `app/tentang.tsx` akan langsung dideteksi oleh compiler Metro.
+*   Menambah file `src/app/tentang.tsx` (atau `app/tentang.tsx`) akan langsung dideteksi oleh compiler Metro.
 *   Rute baru akan **tercipta secara otomatis di alamat `/tentang`** tanpa perlu merubah satu barispun kode di file `_layout.tsx` atau file konfigurasi lain.

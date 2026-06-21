@@ -19,18 +19,24 @@ Di balik layar, NativeWind menerjemahkan `bg-blue-500` menjadi `backgroundColor:
 
 ## 2. Cara Mengonfigurasi NativeWind v4 di Expo
 
-Proses instalasi membutuhkan konfigurasi compiler Babel agar compiler Tailwind bisa bekerja di Android/iOS:
+Proses instalasi membutuhkan beberapa konfigurasi file agar compiler Tailwind bisa bekerja secara native di Android/iOS:
 
 1.  **Instal Paket Dependensi**:
     ```bash
-    npm install nativewind@4.0.0-rc.1 tailwindcss@3.4.0 react-native-reanimated
+    npm install nativewind@^4.2.5 tailwindcss@^3.4.1 react-native-reanimated
     ```
-2.  **Inisialisasi File Tailwind Config**:
-    Buat file **`tailwind.config.js`** di root folder proyek Anda:
+
+2.  **Inisialisasi File Tailwind Config (`tailwind.config.js`)**:
+    Buat file **`tailwind.config.js`** di root folder proyek Anda. Daftarkan folder `app` dan `components` (dan versi `src` jika Anda menggunakannya seperti di proyek `belajar`):
     ```javascript
     // tailwind.config.js
     module.exports = {
-      content: ["./app/**/*.{js,jsx,ts,tsx}", "./components/**/*.{js,jsx,ts,tsx}"],
+      content: [
+        "./app/**/*.{js,jsx,ts,tsx}",
+        "./components/**/*.{js,jsx,ts,tsx}",
+        "./src/app/**/*.{js,jsx,ts,tsx}",
+        "./src/components/**/*.{js,jsx,ts,tsx}"
+      ],
       presets: [require("nativewind/preset")],
       theme: {
         extend: {},
@@ -38,16 +44,51 @@ Proses instalasi membutuhkan konfigurasi compiler Babel agar compiler Tailwind b
       plugins: [],
     }
     ```
-3.  **Daftarkan Plugin Babel**:
-    Buka file **`babel.config.js`** di root folder Anda dan tambahkan plugin NativeWind:
+
+3.  **Daftarkan Preset Babel (`babel.config.js`)**:
+    Buka file **`babel.config.js`** di root folder Anda dan sesuaikan agar NativeWind terdaftar sebagai **preset** (dan sesuaikan `jsxImportSource`):
     ```javascript
     module.exports = function (api) {
       api.cache(true);
       return {
-        presets: ["babel-preset-expo"],
-        plugins: ["nativewind/babel"], // TAMBAHKAN BARIS INI!
+        presets: [
+          ['babel-preset-expo', { jsxImportSource: 'nativewind' }],
+          'nativewind/babel',
+        ],
+        plugins: [
+          'react-native-reanimated/plugin', // Tempatkan plugin reanimated jika digunakan
+        ],
       };
     };
+    ```
+
+4.  **Buat File Global CSS & Daftarkan Tailwind Directives**:
+    Buat file **`global.css`** (di root folder atau di `src/global.css` jika menggunakan struktur `src`). Isi file tersebut dengan direktif Tailwind:
+    ```css
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+    ```
+
+5.  **Konfigurasi Metro Bundler (`metro.config.js`)**:
+    Buat file **`metro.config.js`** di root folder proyek Anda untuk memberitahu Metro agar memproses file CSS menggunakan compiler NativeWind:
+    ```javascript
+    // metro.config.js
+    const { getDefaultConfig } = require("expo/metro-config");
+    const { withNativeWind } = require("nativewind/metro");
+
+    const config = getDefaultConfig(__dirname);
+
+    // Sesuaikan path input CSS (misal: "./src/global.css" atau "./global.css")
+    module.exports = withNativeWind(config, { input: "./src/global.css" });
+    ```
+
+6.  **Import File CSS di Root Layout (`_layout.tsx`)**:
+    Buka file **`src/src/app/_layout.tsx (atau app/_layout.tsx)`** (atau **`src/app/_layout.tsx (atau app/_layout.tsx)`**) dan impor file CSS global Anda di baris paling atas agar style Tailwind di-load ke seluruh layar:
+    ```tsx
+    import '../global.css'; // Sesuai relative path dari folder layout Anda
+    import { Slot } from 'expo-router';
+    // ...
     ```
 
 ---
@@ -57,7 +98,7 @@ Proses instalasi membutuhkan konfigurasi compiler Babel agar compiler Tailwind b
 Setelah konfigurasi selesai, mari kita tulis ulang komponen Card Posko Donor kita menggunakan utility class Tailwind CSS yang bersih dan rapi:
 
 ```tsx
-// components/CardPoskoTailwind.tsx
+// src/components/CardPoskoTailwind.tsx (atau components/CardPoskoTailwind.tsx)
 import React from 'react';
 import { View, Text, Image } from 'react-native';
 

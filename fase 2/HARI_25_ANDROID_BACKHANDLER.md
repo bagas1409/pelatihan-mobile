@@ -17,12 +17,12 @@ React Native menyediakan modul **`BackHandler`** untuk mendengarkan event klik t
 
 ---
 
-## 2. Studi Kasus PMI: Konfirmasi Keluar di Halaman Utama (`app/index.tsx`)
+## 2. Studi Kasus PMI: Konfirmasi Keluar di Halaman Utama (`src/app/index.tsx (atau app/index.tsx)`)
 
 Mari kita sisipkan pencegat tombol back fisik Android ini menggunakan React hook `useEffect`:
 
 ```tsx
-// app/index.tsx
+// src/app/index.tsx (atau app/index.tsx)
 import React, { useEffect } from 'react';
 import { View, Text, BackHandler, Alert } from 'react-native';
 

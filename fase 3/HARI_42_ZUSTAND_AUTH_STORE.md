@@ -134,7 +134,7 @@ export default function LayarProfilDinas() {
 
 ### Jawaban 1: Indikator Proteksi Rute (Route Guard Flag)
 *   **Penyaring Akses**: Variabel `isAuthenticated` bertindak sebagai bendera penentu. 
-*   Jika nilainya `false`, sistem navigasi di file layout root `app/_layout.tsx` akan langsung mencegat pemuatan halaman dan melempar balik browser/aplikasi ke layar login karena user belum memiliki otorisasi token JWT yang valid.
+*   Jika nilainya `false`, sistem navigasi di file layout root `src/app/_layout.tsx (atau app/_layout.tsx)` akan langsung mencegat pemuatan halaman dan melempar balik browser/aplikasi ke layar login karena user belum memiliki otorisasi token JWT yang valid.
 
 ### Jawaban 2: Membakar Riwayat Halaman
 *   **Keamanan Ganda**: Menggunakan `router.replace` menjamin riwayat tumpukan halaman dashboard petugas **dihapus secara bersih dari memori stack**. 

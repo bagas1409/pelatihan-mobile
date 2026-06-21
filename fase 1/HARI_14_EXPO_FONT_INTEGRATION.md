@@ -16,12 +16,17 @@ npx expo install expo-font expo-splash-screen
 
 ---
 
-## 2. Studi Kasus PMI: Memasang Font di File Layout Global (`app/_layout.tsx`)
+## 2. Studi Kasus PMI: Memasang Font di File Layout Global (`src/src/app/_layout.tsx (atau app/_layout.tsx)` atau `src/app/_layout.tsx (atau app/_layout.tsx)`)
 
-Buka berkas pengatur layout utama Anda di **`app/_layout.tsx`** (atau `App.tsx` jika menggunakan struktur non-router), lalu sesuaikan kodenya untuk mengimpor dan memuat font secara aman sebelum menggambar halaman.
+Buka berkas pengatur layout utama Anda di **`src/src/app/_layout.tsx (atau app/_layout.tsx)`** (atau **`src/app/_layout.tsx (atau app/_layout.tsx)`** jika tidak menggunakan folder `src`), lalu sesuaikan kodenya untuk mengimpor dan memuat font secara aman sebelum menggambar halaman.
+
+> [!WARNING]
+> Perhatikan penulisan relative path ke folder **`assets`**:
+> * Jika menggunakan struktur folder **`src`** (`src/src/app/_layout.tsx (atau app/_layout.tsx)`), gunakan path: `../../assets/...`
+> * Jika menggunakan struktur folder root (`src/app/_layout.tsx (atau app/_layout.tsx)`), gunakan path: `../assets/...`
 
 ```tsx
-// app/_layout.tsx
+// src/src/app/_layout.tsx (atau app/_layout.tsx) (atau src/app/_layout.tsx (atau app/_layout.tsx))
 import React, { useEffect } from 'react';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
@@ -34,10 +39,11 @@ SplashScreen.preventAutoHideAsync();
 export default function LayoutUtamaGlobal() {
   
   // 2. KONTROL PENGUNDUHAN FILE FONT
+  // Sesuaikan path ke '../../assets' jika file layout Anda berada di dalam 'src/app/'
   const [fontsLoaded, error] = useFonts({
-    'Outfit-Bold': require('../assets/fonts/Outfit-Bold.ttf'),
-    'Outfit-Medium': require('../assets/fonts/Outfit-Medium.ttf'),
-    'Inter-Regular': require('../assets/fonts/Inter-Regular.ttf'),
+    'Outfit-Bold': require('../../assets/fonts/Outfit-Bold.ttf'), // Atau '../assets/fonts/Outfit-Bold.ttf' jika non-src
+    'Outfit-Medium': require('../../assets/fonts/Outfit-Medium.ttf'),
+    'Inter-Regular': require('../../assets/fonts/Inter-Regular.ttf'),
   });
 
   // 3. SELESAI LOAD -> SEMBUNYIKAN SPLASH SCREEN

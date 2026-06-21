@@ -95,7 +95,7 @@ export default class ErrorBoundary extends Component<Props, State> {
 }
 ```
 
-Bungkus halaman terluar di layout global `app/_layout.tsx` menggunakan komponen `<ErrorBoundary>` ini untuk melindungi seluruh alur sistem.
+Bungkus halaman terluar di layout global `src/app/_layout.tsx (atau app/_layout.tsx)` menggunakan komponen `<ErrorBoundary>` ini untuk melindungi seluruh alur sistem.
 
 ---
 

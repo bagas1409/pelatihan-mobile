@@ -76,7 +76,7 @@ export default useLogistikStore;
 ### Jawaban 2: Konsep Hooks-based Store (Tanpa Provider)
 *   **Akses Langsung**: Zustand didesain berbasis React Hooks murni. 
 *   Saat kita mengeksekusi `create()`, Zustand membuat objek store terisolasi di memori RAM dan mengembalikan hook React kustom. 
-*   Komponen visual tinggal mengimpor hook tersebut layaknya fungsi JavaScript biasa. Karena tidak menggunakan Context API di balik layarnya, kita tidak perlu repot menyelimuti root file `app/_layout.tsx` menggunakan komponen Provider, menghemat kebersihan struktur file root proyek.
+*   Komponen visual tinggal mengimpor hook tersebut layaknya fungsi JavaScript biasa. Karena tidak menggunakan Context API di balik layarnya, kita tidak perlu repot menyelimuti root file `src/app/_layout.tsx (atau app/_layout.tsx)` menggunakan komponen Provider, menghemat kebersihan struktur file root proyek.
 
 ### Jawaban 3: Nama Action Pengubah
 *   Fungsi tersebut bernama **`setPetugas`**.

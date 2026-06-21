@@ -17,12 +17,12 @@ Pada Stack Navigator, kita bisa menyetel rute tertentu agar bertindak sebagai mo
 
 ## 2. Studi Kasus PMI: Jendela Filter Cepat Golongan Darah
 
-### Langkah 1: Daftarkan Rute Modal di Layout Global (`app/_layout.tsx`)
+### Langkah 1: Daftarkan Rute Modal di Layout Global (`src/app/_layout.tsx (atau app/_layout.tsx)`)
 
 Buka file layout utama global Anda dan tambahkan rute group khusus modal:
 
 ```tsx
-// app/_layout.tsx
+// src/app/_layout.tsx (atau app/_layout.tsx)
 import React from 'react';
 import { Stack } from 'expo-router';
 

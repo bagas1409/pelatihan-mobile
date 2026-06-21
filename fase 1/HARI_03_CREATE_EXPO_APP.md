@@ -41,14 +41,16 @@ Di layar terminal Anda akan muncul gambar kode **QR Code** berukuran besar beser
 1.  Buka aplikasi **Expo Go** di HP Anda.
 2.  **Untuk HP Android**: Klik tombol **Scan QR Code**, lalu arahkan kamera HP Anda ke gambar QR Code yang ada di layar terminal laptop Anda.
 3.  **Untuk HP iPhone (iOS)**: Buka aplikasi kamera bawaan iOS, scan QR Code tersebut, lalu klik pop-up tautan link yang mengarahkan untuk membuka aplikasi Expo Go.
-4.  Tunggu progress bar di HP menyentuh angka 100% (*Bundling JavaScript*). Anda akan melihat tampilan layar putih bertuliskan *"Open up App.tsx to start working on your app!"* terpampang nyata di layar HP Anda!
+4.  Tunggu progress bar di HP menyentuh angka 100% (*Bundling JavaScript*). Anda akan melihat tampilan layar awal aplikasi ter-render secara nyata di layar HP Anda!
+    > [!NOTE]
+    > Pada template Expo Router modern (seperti proyek **`belajar`** kita), tampilan awal dimuat dari berkas **`src/src/app/index.tsx (atau app/index.tsx)`** (atau **`src/app/index.tsx (atau app/index.tsx)`** jika tidak menggunakan folder `src`), sedangkan pada template kosong klasik menggunakan file **`App.tsx`** di root folder.
 
 ---
 
 ## 4. Latihan Soal Mandiri
 1. Amati isi pesan terminal Anda saat menjalankan perintah `npx expo start`.
 2. Jelaskan fungsi dari perintah `npx expo start` tersebut bagi kelancaran siklus perubahan kode program Anda secara langsung di layar HP (*Fast Refresh*).
-3. Sebutkan berkas file utama di root folder proyek yang bertindak sebagai pintu masuk (*Entry Point*) pertama kali aplikasi digambar di layar HP pada template blank-typescript.
+3. Sebutkan berkas file utama yang bertindak sebagai pintu masuk (*Entry Point*) pertama kali aplikasi digambar di layar HP pada template blank-typescript klasik vs template Expo Router modern (seperti pada proyek `belajar` kita).
 
 ---
 
@@ -59,4 +61,5 @@ Di layar terminal Anda akan muncul gambar kode **QR Code** berukuran besar beser
 *   **Fungsi Fast Refresh**: Metro memantau perubahan teks di file kode kita secara real-time. Jika Anda mengedit kata di VS Code dan menekan tombol save, Metro akan langsung memaketkan perubahan tersebut dan menyuntikkannya ke aplikasi Expo Go di HP Anda lewat jaringan Wi-Fi dalam waktu kurang dari 1 detik (*Hot Reloading*), memotong waktu tunggu compile ulang yang biasanya memakan waktu menit-an pada sistem manual.
 
 ### Jawaban 3: Pintu Masuk Aplikasi (Entry Point)
-*   Pada template dasar blank-typescript, file pintu masuk pertama kali adalah berkas **`App.tsx`** yang berada di root direktori proyek. Mengubah isi fungsi render di dalam `App.tsx` akan langsung merubah tampilan awal layar HP Anda.
+*   **Template Klasik (blank-typescript)**: Pintu masuk pertama kali adalah berkas **`App.tsx`** di root direktori proyek.
+*   **Template Expo Router Modern (seperti proyek `belajar`)**: Pintu masuk halaman utama pertama kali adalah berkas **`src/src/app/index.tsx (atau app/index.tsx)`** (atau **`src/app/index.tsx (atau app/index.tsx)`**), di mana struktur rute diatur secara otomatis berbasis folder oleh library `expo-router`.

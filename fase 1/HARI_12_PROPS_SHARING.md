@@ -16,10 +16,10 @@ Saat merancang aplikasi DonorKu PMI, kita seringkali menggambar komponen visual 
 
 ## 2. Studi Kasus PMI: Komponen Kartu Riwayat Donor Mandiri
 
-### Langkah 1: Buat Komponen Anak (`components/KartuRiwayat.tsx`)
+### Langkah 1: Buat Komponen Anak (`src/components/KartuRiwayat.tsx (atau components/KartuRiwayat.tsx)`)
 
 ```tsx
-// components/KartuRiwayat.tsx
+// src/components/KartuRiwayat.tsx (atau components/KartuRiwayat.tsx)
 import React from 'react';
 import { View, Text } from 'react-native';
 

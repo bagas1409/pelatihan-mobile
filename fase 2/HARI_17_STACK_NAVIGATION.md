@@ -7,12 +7,12 @@ Bayangkan setumpuk piring di atas meja makan. Piring pertama ditaruh di bawah (l
 
 ---
 
-## 1. Mendaftarkan Stack Layout di `app/_layout.tsx`
+## 1. Mendaftarkan Stack Layout di `src/src/app/_layout.tsx (atau app/_layout.tsx)` (atau `src/app/_layout.tsx (atau app/_layout.tsx)`)
 
 Untuk mengaktifkan model navigasi Stack, kita harus mendefinisikan pembungkus **`<Stack>`** di file layout global:
 
 ```tsx
-// app/_layout.tsx
+// src/src/app/_layout.tsx (atau app/_layout.tsx) (atau src/app/_layout.tsx (atau app/_layout.tsx))
 import React from 'react';
 import { Stack } from 'expo-router';
 
@@ -52,9 +52,9 @@ export default function LayoutDinas() {
 
 Setelah `<Stack>` terpasang, kita bisa membuat link navigasi yang mendorong (*Push*) halaman baru ke atas tumpukan.
 
-### Halaman Utama: `app/index.tsx`
+### Halaman Utama: `src/src/app/index.tsx (atau app/index.tsx)` (atau `src/app/index.tsx (atau app/index.tsx)`)
 ```tsx
-// app/index.tsx
+// src/src/app/index.tsx (atau app/index.tsx) (atau src/app/index.tsx (atau app/index.tsx))
 import React from 'react';
 import { View, Text } from 'react-native';
 import { Link } from 'expo-router';
@@ -74,11 +74,11 @@ export default function HomeDashboard() {
 
 ---
 
-### Halaman Detail: `app/detail.tsx`
-Ketika halaman detail dibuka, sistem operasi Android dan iOS akan otomatis **menggambar tombol panah kembali (Back Button)** di pojok kiri atas header bar tanpa perlu kita buat kodenya secara manual.
+### Halaman Detail: `src/src/app/detail.tsx (atau app/detail.tsx)` (atau `src/app/detail.tsx (atau app/detail.tsx)`)
+Ketika Halaman detail dibuka, sistem operasi Android dan iOS akan otomatis **menggambar tombol panah kembali (Back Button)** di pojok kiri atas header bar tanpa perlu kita buat kodenya secara manual.
 
 ```tsx
-// app/detail.tsx
+// src/src/app/detail.tsx (atau app/detail.tsx) (atau src/app/detail.tsx (atau app/detail.tsx))
 import React from 'react';
 import { View, Text } from 'react-native';
 

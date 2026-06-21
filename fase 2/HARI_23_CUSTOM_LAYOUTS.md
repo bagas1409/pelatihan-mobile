@@ -19,10 +19,10 @@ Kita bisa melompati visual default dengan memanfaatkan opsi rute `options` di fi
 
 ## 2. Studi Kasus PMI: Header Dashboard Bernuansa Merah PMI
 
-Mari kita pasang kustomisasi header ini langsung di dalam file rute utama kita di **`app/index.tsx`**:
+Mari kita pasang kustomisasi header ini langsung di dalam file rute utama kita di **`src/src/app/index.tsx (atau app/index.tsx)`** (atau **`src/app/index.tsx (atau app/index.tsx)`**):
 
 ```tsx
-// app/index.tsx
+// src/src/app/index.tsx (atau app/index.tsx) (atau src/app/index.tsx (atau app/index.tsx))
 import React from 'react';
 import { View, Text, TouchableOpacity, Alert } from 'react-native';
 import { Stack } from 'expo-router';
@@ -73,8 +73,8 @@ export default function HomeDashboardDinas() {
 ---
 
 ## 3. Latihan Soal Mandiri
-1. Amati tag `<Stack.Screen />` yang ditanamkan langsung di dalam file `app/index.tsx` di atas.
-2. Jelaskan keuntungan menggunakan komponen `<Stack.Screen />` di dalam masing-masing file halaman untuk mengontrol opsi header, dibandingkan kita menuliskan semua opsi rute di file global `app/_layout.tsx`.
+1. Amati tag `<Stack.Screen />` yang ditanamkan langsung di dalam file `src/src/app/index.tsx (atau app/index.tsx)` (atau `src/app/index.tsx (atau app/index.tsx)`) di atas.
+2. Jelaskan keuntungan menggunakan komponen `<Stack.Screen />` di dalam masing-masing file halaman untuk mengontrol opsi header, dibandingkan kita menuliskan semua opsi rute di file global `src/src/app/_layout.tsx (atau app/_layout.tsx)` (atau `src/app/_layout.tsx (atau app/_layout.tsx)`).
 3. Sebutkan nama properti di dalam `options` yang bertugas menggambar komponen di pojok kanan atas header bar.
 
 ---

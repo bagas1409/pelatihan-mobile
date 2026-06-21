@@ -23,12 +23,12 @@ Aturan emas `Task Manager`: Pendaftaran nama tugas dan fungsi eksekutornya wajib
 
 ---
 
-## 3. Studi Kasus PMI: Pelacak Ambulans Latar Belakang (`app/_layout.tsx`)
+## 3. Studi Kasus PMI: Pelacak Ambulans Latar Belakang (`src/app/_layout.tsx (atau app/_layout.tsx)`)
 
 Buka file root layout Anda, tambahkan pendefinisian tugas GPS background di luar fungsi komponen:
 
 ```tsx
-// app/_layout.tsx
+// src/app/_layout.tsx (atau app/_layout.tsx)
 import React, { useEffect } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import * as TaskManager from 'expo-task-manager';

@@ -22,10 +22,10 @@ Di Expo Router Stack, kita bisa memodifikasi transisi menggunakan properti **`an
 
 Kita ingin halaman detail CITO urgent dibuka dengan animasi memudar (`fade`) yang tenang, sedangkan halaman form edit dibuka dengan geseran dari bawah.
 
-Buka file konfigurasi **`app/_layout.tsx`** dan pasang konfigurasi animasinya:
+Buka file konfigurasi **`src/app/_layout.tsx (atau app/_layout.tsx)`** dan pasang konfigurasi animasinya:
 
 ```tsx
-// app/_layout.tsx
+// src/app/_layout.tsx (atau app/_layout.tsx)
 import React from 'react';
 import { Stack } from 'expo-router';
 

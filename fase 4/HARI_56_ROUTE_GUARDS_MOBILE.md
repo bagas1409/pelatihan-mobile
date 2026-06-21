@@ -11,18 +11,18 @@ Jika terdeteksi pengguna liar mencoba mengakses halaman administratir khusus pet
 
 ## 1. Konsep Route Guard di Expo Router
 
-Di web, kita terbiasa menggunakan middleware router. Di Expo Router, kita meletakkan logika pencegatan ini di file layout pembungkus utama **`app/_layout.tsx`** menggunakan kombinasi React Hook `useEffect` dan hook navigasi `useSegments()`:
+Di web, kita terbiasa menggunakan middleware router. Di Expo Router, kita meletakkan logika pencegatan ini di file layout pembungkus utama **`src/app/_layout.tsx (atau app/_layout.tsx)`** menggunakan kombinasi React Hook `useEffect` dan hook navigasi `useSegments()`:
 *   **`useSegments()`**: Mengembalikan array segmen rute URL aktif saat ini (contoh: jika user di halaman `/relawan/daftar`, segmennya adalah `['relawan', 'daftar']`).
 *   **Logika Filter**: Jika user tidak berada di folder `login` dan status login `isAuthenticated` bernilai `false`, alihkan paksa ke `/login`.
 
 ---
 
-## 2. Studi Kasus PMI: Kode Penjaga Rute di `app/_layout.tsx`
+## 2. Studi Kasus PMI: Kode Penjaga Rute di `src/app/_layout.tsx (atau app/_layout.tsx)`
 
-Buka file layout utama global Anda di **`app/_layout.tsx`** dan tanamkan fungsi pencegat otorisasi berikut:
+Buka file layout utama global Anda di **`src/app/_layout.tsx (atau app/_layout.tsx)`** dan tanamkan fungsi pencegat otorisasi berikut:
 
 ```tsx
-// app/_layout.tsx
+// src/app/_layout.tsx (atau app/_layout.tsx)
 import React, { useEffect } from 'react';
 import { Stack, useRouter, useSegments } from 'expo-router';
 import useAuthStore from '../store/useAuthStore';

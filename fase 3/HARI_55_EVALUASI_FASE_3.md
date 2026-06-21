@@ -23,7 +23,7 @@ Anda diminta merakit alur otentikasi login dinas petugas PMI Lampung dengan meka
     *   Jika server backend membalas sukses (HTTP 200), rekam data user petugas ke dalam **Zustand Auth Store** (`loginPetugas`), dan kunci string token JWT-nya ke dalam **`expo-secure-store`** menggunakan helper `storageHelper.simpanToken`.
     *   Picu notifikasi melayang **Toast** berwarna hijau bertuliskan *"Login Berhasil, Selamat bertugas!"*.
 4.  **Verifikasi Boooting Awal (Session Restorer)**:
-    *   Di file root `app/_layout.tsx`, tulis `useEffect` awal yang bertugas membaca `SecureStore` secara otomatis. Jika di HP petugas terdeteksi token lama yang masih aktif, panggil API `/auth/me` untuk memulihkan status login ke Zustand secara otomatis, melompati layar login, dan langsung mengarahkan layar ke halaman Dashboard utama.
+    *   Di file root `src/app/_layout.tsx (atau app/_layout.tsx)`, tulis `useEffect` awal yang bertugas membaca `SecureStore` secara otomatis. Jika di HP petugas terdeteksi token lama yang masih aktif, panggil API `/auth/me` untuk memulihkan status login ke Zustand secara otomatis, melompati layar login, dan langsung mengarahkan layar ke halaman Dashboard utama.
 
 ---
 

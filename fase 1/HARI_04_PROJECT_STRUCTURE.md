@@ -9,21 +9,39 @@ Memahami letak penempatan file sangat penting agar kode kita tidak berantakan se
 
 ## 1. Peta Direktori Proyek Expo Modern
 
-Secara umum, struktur folder proyek Expo modern tersusun sebagai berikut:
+Proyek Expo Router modern dapat dikonfigurasi dalam dua bentuk tata letak folder: **Root-level Layout** (folder di tingkat paling luar) atau **`src/` Folder Layout** (semua folder dibungkus di dalam folder `src/`). 
 
+Di proyek **`belajar`** kita, template diinisialisasi menggunakan struktur **`src/` Folder Layout** dengan aliases `@/*` untuk kerapian.
+
+### Opsi A: Struktur Folder `src/` (Digunakan di proyek `belajar` kita)
+```
+belajar/
+├── assets/             <-- Menyimpan asset gambar statis (.png, .jpg), ikon, dan logo PMI.
+├── src/                <-- Folder pembungkus utama kode sumber
+│   ├── app/            <-- Folder rute halaman (Expo Router). Setiap file di sini mewakili layar HP.
+│   │   ├── _layout.tsx <-- Layout global (font loading, splash screen, dll.)
+│   │   ├── index.tsx   <-- Layar pertama kali terbuka (Home/Beranda)
+│   │   └── explore.tsx <-- Layar menu explore
+│   ├── components/     <-- Komponen UI reusable (Button, Card, Input)
+│   ├── constants/      <-- Variabel statis global (misal: warna dasar merah PMI)
+│   └── hooks/          <-- Custom hooks React (useApi, useAuth, dll.)
+├── package.json        <-- Daftar dependensi npm proyek
+├── tsconfig.json       <-- Konfigurasi TypeScript dan path alias (seperti @/* -> ./src/*)
+└── app.json            <-- Konfigurasi identitas resmi aplikasi
+```
+
+### Opsi B: Struktur Folder Tingkat Root (Tanpa folder `src/`)
 ```
 donorku-mobile/
-├── assets/             <-- Tempat menyimpan file gambar statis (.png, .jpg), ikon, dan logo PMI.
-├── app/                <-- Folder rute halaman (Expo Router). Setiap file di sini mewakili layar HP.
-│   ├── (tabs)/         <-- Grup navigasi menu bawah (Beranda, Profil, dll).
-│   ├── _layout.tsx     <-- Berkas penata layout global (mengatur font, splashscreen, header).
-│   └── index.tsx       <-- Layar pertama kali yang dibuka (Home/Beranda).
-├── components/         <-- Tempat menyimpan potongan UI yang bisa dipakai ulang (Button, Card, Input).
-├── constants/          <-- Menyimpan variabel statis global (palette warna merah PMI, ukuran margin).
-├── hooks/              <-- Tempat menyimpan fungsi custom hooks React (seperti useApi, useAuth).
-├── package.json        <-- Daftar pustaka/library pihak ketiga yang kita gunakan.
-├── tsconfig.json       <-- Konfigurasi compiler TypeScript.
-└── app.json            <-- Konfigurasi pusat identitas aplikasi untuk Android & iOS.
+├── assets/             <-- Tempat menyimpan file gambar statis, ikon, dan logo PMI.
+├── app/                <-- Folder rute halaman (Expo Router).
+│   ├── _layout.tsx     <-- Berkas penata layout global.
+│   └── index.tsx       <-- Layar pertama kali yang dibuka.
+├── components/         <-- Tempat menyimpan potongan UI reusable.
+├── constants/          <-- Menyimpan variabel statis global.
+├── hooks/              <-- Tempat menyimpan fungsi custom hooks React.
+├── package.json        <-- Daftar pustaka/library pihak ketiga.
+└── app.json            <-- Konfigurasi pusat identitas aplikasi.
 ```
 
 ---

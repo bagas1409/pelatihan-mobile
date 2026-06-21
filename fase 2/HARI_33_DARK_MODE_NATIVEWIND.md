@@ -22,7 +22,12 @@ Buka file `tailwind.config.js` di root folder proyek Anda, lalu daftarkan opsi d
 ```javascript
 // tailwind.config.js
 module.exports = {
-  content: ["./app/**/*.{js,jsx,ts,tsx}", "./components/**/*.{js,jsx,ts,tsx}"],
+  content: [
+    "./app/**/*.{js,jsx,ts,tsx}",
+    "./components/**/*.{js,jsx,ts,tsx}",
+    "./src/app/**/*.{js,jsx,ts,tsx}",
+    "./src/components/**/*.{js,jsx,ts,tsx}"
+  ],
   presets: [require("nativewind/preset")],
   darkMode: "class", // TAMBAHKAN BARIS INI (Menggunakan deteksi kelas untuk mode malam)
   theme: {
@@ -39,7 +44,7 @@ module.exports = {
 Mari buat komponen kartu info petugas yang responsif terhadap perubahan mode gelap malam hari:
 
 ```tsx
-// components/KartuPetugasMalam.tsx
+// src/components/KartuPetugasMalam.tsx (atau components/KartuPetugasMalam.tsx)
 import React from 'react';
 import { View, Text, useColorScheme } from 'react-native';
 

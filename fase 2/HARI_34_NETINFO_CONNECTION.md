@@ -62,7 +62,7 @@ export default function BannerInternetMati() {
 }
 ```
 
-Tanamkan komponen `<BannerInternetMati />` ini di dalam file layout global `app/_layout.tsx` Anda agar banner pengaman ini aktif menjaga seluruh halaman aplikasi secara serentak.
+Tanamkan komponen `<BannerInternetMati />` ini di dalam file layout global `src/app/_layout.tsx (atau app/_layout.tsx)` Anda agar banner pengaman ini aktif menjaga seluruh halaman aplikasi secara serentak.
 
 ---
 

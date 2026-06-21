@@ -20,12 +20,12 @@ npm install @gorhom/portal
 
 ## 2. Studi Kasus PMI: Jendela Darurat CITO Tembus Pandang
 
-### Langkah 1: Pasang Portal Provider di Layout Global (`app/_layout.tsx`)
+### Langkah 1: Pasang Portal Provider di Layout Global (`src/app/_layout.tsx (atau app/_layout.tsx)`)
 
 Agar portal bisa bekerja melempar elemen, kita wajib menyelimuti halaman root kita menggunakan **`PortalProvider`**:
 
 ```tsx
-// app/_layout.tsx
+// src/app/_layout.tsx (atau app/_layout.tsx)
 import React from 'react';
 import { Stack } from 'expo-router';
 // Impor Provider dari gorhom portal
@@ -104,7 +104,7 @@ export default function KartuCitoKecil() {
 
 ## 3. Latihan Soal Mandiri
 1. Masalah visual apa yang dipecahkan oleh penggunaan library **Portal** di React Native saat merakit dialog modal di dalam kontainer yang berukuran kecil?
-2. Buka kode `app/_layout.tsx` di atas. Sebutkan nama komponen provider yang wajib diselimutkan pada halaman root agar portal bisa bekerja memindahkan elemen visual.
+2. Buka kode `src/app/_layout.tsx (atau app/_layout.tsx)` di atas. Sebutkan nama komponen provider yang wajib diselimutkan pada halaman root agar portal bisa bekerja memindahkan elemen visual.
 3. Apakah elemen yang ditaruh di dalam tag `<Portal>` tetap bisa membaca variabel state local `showModal` yang berada di luar tag tersebut? Jelaskan hubungannya dengan hierarki memori data React.
 
 ---

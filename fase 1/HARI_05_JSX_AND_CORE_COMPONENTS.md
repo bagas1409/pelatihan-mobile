@@ -24,7 +24,7 @@ Saat merakit tampilan web di Fase 2 s.d 5, kita menggunakan tag HTML seperti `<d
 Mari kita buat contoh kode penyusunan layout sederhana menggunakan JSX TypeScript.
 
 ```tsx
-// components/CardPosko.tsx
+// src/src/components/CardPosko.tsx (atau components/CardPosko.tsx) (atau src/components/CardPosko.tsx (atau components/CardPosko.tsx))
 import React from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
 
@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
 
 ### Jawaban 2: Sintaks Load Image (URI vs Require)
 *   **Gambar Internet (Dinamis)**: Menggunakan objek uri: `source={{ uri: 'https://...' }}`. Wajib disuplai ukuran lebar dan tinggi (`width` & `height`) di styling CSS, karena browser/HP tidak tahu dimensi gambar internet sebelum di-download.
-*   **Gambar Lokal (Statis)**: Menggunakan fungsi require: `source={require('../assets/logo.png')}`. Tidak wajib menulis lebar tinggi karena compiler otomatis membaca ukuran dimensi fisik file gambar lokal saat proses build.
+*   **Gambar Lokal (Statis)**: Menggunakan fungsi require, misalnya: `source={require('../../assets/logo.png')}` (jika file berada di `src/components/`) atau `source={require('../assets/logo.png')}` (jika berada di root `components/`). Tidak wajib menulis lebar tinggi karena compiler otomatis membaca ukuran dimensi fisik file gambar lokal saat proses build.
 
 ### Jawaban 3: Arah Layout Flexbox (Row)
 *   **`flexDirection: 'row'`** merubah arah aliran penataan komponen anak di dalam `<View>` menjadi **Horizontal (dari kiri ke kanan)**. Tanpa penulisan row, secara default seluruh layout flexbox di React Native beraliran **Vertical (dari atas ke bawah / `column`)**, kebalikan dari CSS web yang default-nya horizontal.

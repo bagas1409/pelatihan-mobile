@@ -16,12 +16,12 @@ npm install react-native-toast-message
 
 ---
 
-## 2. Studi Kasus PMI: Memasang Container Toast di Layout Global (`app/_layout.tsx`)
+## 2. Studi Kasus PMI: Memasang Container Toast di Layout Global (`src/app/_layout.tsx (atau app/_layout.tsx)`)
 
 Sama halnya dengan Portal Provider, library Toast membutuhkan satu komponen pembungkus induk yang ditempelkan di bagian paling bawah layout global agar notifikasi bisa dirender melayang di atas seluruh rute halaman:
 
 ```tsx
-// app/_layout.tsx
+// src/app/_layout.tsx (atau app/_layout.tsx)
 import React from 'react';
 import { Stack } from 'expo-router';
 // Impor komponen Toast utama
@@ -75,7 +75,7 @@ Toast.show({
 
 ## 4. Latihan Soal Mandiri
 1. Apa keuntungan penggunaan notifikasi **Toast** dibandingkan popup **Alert.alert** dari segi kenyamanan pengguna (*User Experience*) saat sedang menginput data cepat di lapangan?
-2. Buka kode `app/_layout.tsx` di atas. Jelaskan mengapa kita menaruh tag `<Toast />` di bagian luar dan bawah tag `<Stack>`, bukan di dalam Stack Screen.
+2. Buka kode `src/app/_layout.tsx (atau app/_layout.tsx)` di atas. Jelaskan mengapa kita menaruh tag `<Toast />` di bagian luar dan bawah tag `<Stack>`, bukan di dalam Stack Screen.
 3. Sebutkan parameter properti pada `Toast.show` yang bertugas menentukan berapa milidetik lama tayangnya notifikasi sebelum memudar menghilang sendiri.
 
 ---
